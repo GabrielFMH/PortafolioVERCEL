@@ -50,7 +50,7 @@ const projects: Project[] = [
     icon: <Smartphone className="w-6 h-6" />,
     demoUrl: "",
     githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/oreganoai.jpeg",
     features: [
       "Reconocimiento de imágenes",
       "Diagnóstico automático",
@@ -71,7 +71,7 @@ const projects: Project[] = [
     icon: <Code2 className="w-6 h-6" />,
     demoUrl: "",
     githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/simulapp.PNG",
     features: [
       "Simulacros de exámenes",
       "Corrección automática",
@@ -92,7 +92,7 @@ const projects: Project[] = [
     icon: <Database className="w-6 h-6" />,
     demoUrl: "",
     githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/alertatacna.jpeg",
     features: [
       "Reporte geolocalizado",
       "Seguimiento de casos",
@@ -111,9 +111,9 @@ const projects: Project[] = [
     description: "Sitio web educativo e interactivo para promover el uso responsable del agua mediante juegos, retos y recursos didácticos.",
     tech: ["React", "Firebase", "Tailwind CSS"],
     icon: <Globe className="w-6 h-6" />,
-    demoUrl: "",
+    demoUrl: "https://proyectorecursoshidricosu3.azurewebsites.net/",
     githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/aguatopia.PNG",
     features: [
       "Juegos interactivos",
       "Recursos educativos",
@@ -134,7 +134,7 @@ const projects: Project[] = [
     icon: <Globe className="w-6 h-6" />,
     demoUrl: "",
     githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "",
     features: [
       "Lecciones interactivas",
       "Ejercicios prácticos",
@@ -188,7 +188,7 @@ const projects: Project[] = [
     team: "Equipo de 4",
     gradient: "from-purple-400 to-indigo-600",
     hoverGradient: "from-purple-500 to-indigo-700",
-      },
+  },
 ]
 
 export default function DeveloperProfile() {
@@ -213,76 +213,76 @@ export default function DeveloperProfile() {
       {/* Main Profile Card */}
       <Card className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100" />
-        // ...código anterior...
-          <CardHeader className="relative">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center overflow-hidden">
-                <img
-                  src="/perfil-linkedin.jfif"
-                  alt="Gabriel Melendez Huarachi"
-                  className="w-full h-full object-cover"
-                />
+        {/* ...código anterior... */}
+        <CardHeader className="relative">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center overflow-hidden">
+              <img
+                src="/perfil-linkedin.jfif"
+                alt="Gabriel Melendez Huarachi"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Gabriel Melendez Huarachi</h1>
+              <p className="text-xl text-gray-600 mb-3">Ingeniero de Sistemas | Movile developer and Machine Learning solutions</p>
+              <p className="text-gray-700 mb-4 max-w-2xl">
+                Soy una persona proactiva, organizada y responsable, con buenas relaciones interpersonales. Cuento con capacidades bilingües y gran interés por los avances tecnológicos. Busco aplicar mis habilidades en ingeniería de datos, computación en la nube y aprendizaje profundo para contribuir a una organización innovadora.
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                <Badge variant="secondary">AWS Data Engineering</Badge>
+                <Badge variant="secondary">Power BI</Badge>
+                <Badge variant="secondary">Deep Learning (Nvidia)</Badge>
+                <Badge variant="secondary">Flutter</Badge>
+                <Badge variant="secondary">Liderazgo</Badge>
+                <Badge variant="secondary">Comunicación</Badge>
+                <Badge variant="secondary">Trabajo en equipo</Badge>
               </div>
-              <div className="flex-1 text-center md:text-left">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Gabriel Melendez Huarachi</h1>
-                <p className="text-xl text-gray-600 mb-3">Ingeniero de Sistemas | Movile developer and Machine Learning solutions</p>
-                <p className="text-gray-700 mb-4 max-w-2xl">
-                  Soy una persona proactiva, organizada y responsable, con buenas relaciones interpersonales. Cuento con capacidades bilingües y gran interés por los avances tecnológicos. Busco aplicar mis habilidades en ingeniería de datos, computación en la nube y aprendizaje profundo para contribuir a una organización innovadora.
-                </p>
-                <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-                  <Badge variant="secondary">AWS Data Engineering</Badge>
-                  <Badge variant="secondary">Power BI</Badge>
-                  <Badge variant="secondary">Deep Learning (Nvidia)</Badge>
-                  <Badge variant="secondary">Flutter</Badge>
-                  <Badge variant="secondary">Liderazgo</Badge>
-                  <Badge variant="secondary">Comunicación</Badge>
-                  <Badge variant="secondary">Trabajo en equipo</Badge>
-                </div>
-                <div className="flex justify-center md:justify-start gap-3 mb-2">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="https://github.com/gabrielfmh" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      GitHub
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="mailto:gabrielfarimelendezhuarachi@gmail.com">
-                      <Mail className="w-4 h-4 mr-2" />
-                      Email
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="https://gabrielfmh.github.io/" target="_blank" rel="noopener noreferrer">
-                      <Globe className="w-4 h-4 mr-2" />
-                      Portfolio
-                    </a>
-                  </Button>
-                </div>
-                <div className="flex justify-center md:justify-start gap-3 mb-2">
-                  <span className="text-gray-600 text-sm">(+51) 991164894</span>
-                </div>
-                <div className="flex justify-center md:justify-start">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                    className="w-10 h-10 p-0"
-                  >
-                    <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                    <span className="sr-only">Toggle theme</span>
-                  </Button>
-                </div>
+              <div className="flex justify-center md:justify-start gap-3 mb-2">
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://github.com/gabrielfmh" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="mailto:gabrielfarimelendezhuarachi@gmail.com">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Email
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://gabrielfmh.github.io/" target="_blank" rel="noopener noreferrer">
+                    <Globe className="w-4 h-4 mr-2" />
+                    Portfolio
+                  </a>
+                </Button>
+              </div>
+              <div className="flex justify-center md:justify-start gap-3 mb-2">
+                <span className="text-gray-600 text-sm">(+51) 991164894</span>
+              </div>
+              <div className="flex justify-center md:justify-start">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="w-10 h-10 p-0"
+                >
+                  <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
               </div>
             </div>
-          </CardHeader>
-          // ...código posterior...
+          </div>
+        </CardHeader>
+        {/* ...código posterior... */}
       </Card>
 
       {/* Projects Section */}
       <Card>
         <CardHeader>
-          <h2 className="text-2xl font-bold text-gray-900">Featured Projects</h2>
+          <h2 >Featured Projects</h2>
           <p className="text-gray-600">Click on any project icon to explore the details</p>
         </CardHeader>
         <CardContent>
@@ -327,18 +327,10 @@ export default function DeveloperProfile() {
                 <X className="w-4 h-4" />
               </Button>
             </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Project Image */}
-              <div className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
-                <img
-                  src={selectedProject.image || "/placeholder.svg"}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-
-              {/* Project Details Grid */}
-              <div className="grid md:grid-cols-2 gap-6">
+            <CardContent className="grid md:grid-cols-2 gap-6"> {/* Modified this line */}
+              {/* Left Half: Project Details */}
+              <div className="space-y-6">
+                {/* Key Features */}
                 <div>
                   <h4 className="font-semibold mb-3 flex items-center gap-2">
                     <Star className="w-4 h-4" />
@@ -354,6 +346,7 @@ export default function DeveloperProfile() {
                   </ul>
                 </div>
 
+                {/* Timeline and Team */}
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold mb-2 flex items-center gap-2">
@@ -371,34 +364,43 @@ export default function DeveloperProfile() {
                     <p className="text-sm text-gray-600">{selectedProject.team}</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Technologies */}
-              <div>
-                <h4 className="font-semibold mb-3">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tech.map((tech) => (
-                    <Badge key={tech} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
+                {/* Technologies */}
+                <div>
+                  <h4 className="font-semibold mb-3">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tech.map((tech) => (
+                      <Badge key={tech} variant="outline">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3 pt-4">
+                  {selectedProject.demoUrl && (
+                    <Button className="flex items-center gap-2">
+                      <ExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </Button>
+                  )}
+                  {selectedProject.githubUrl && (
+                    <Button variant="outline" className="flex items-center gap-2">
+                      <Github className="w-4 h-4" />
+                      View Code
+                    </Button>
+                  )}
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex gap-3 pt-4">
-                {selectedProject.demoUrl && (
-                  <Button className="flex items-center gap-2">
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
-                  </Button>
-                )}
-                {selectedProject.githubUrl && (
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Github className="w-4 h-4" />
-                    View Code
-                  </Button>
-                )}
+              {/* Right Half: Project Image */}
+              <div className="w-full h-full min-h-[300px] bg-gray-100 rounded-lg flex items-center justify-center"> {/* Added min-h for better visual */}
+                <img
+                  src={selectedProject.image || "/placeholder.svg"}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
             </CardContent>
           </Card>
