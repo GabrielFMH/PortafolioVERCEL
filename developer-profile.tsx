@@ -49,7 +49,7 @@ const projects: Project[] = [
     tech: ["Flutter", "TensorFlow", "Firebase", "Python"],
     icon: <Smartphone className="w-6 h-6" />,
     demoUrl: "",
-    githubUrl: "",
+    githubUrl: "https://github.com/orgs/epis-upt-flor/teams/oreganoai",
     image: "/oreganoai.jpeg",
     features: [
       "Reconocimiento de imágenes",
@@ -70,7 +70,7 @@ const projects: Project[] = [
     tech: ["React", "Node.js", "MongoDB", "Express"],
     icon: <Code2 className="w-6 h-6" />,
     demoUrl: "",
-    githubUrl: "",
+    githubUrl: "https://github.com/GabrielFMH/Simulapp",
     image: "/simulapp.PNG",
     features: [
       "Simulacros de exámenes",
@@ -90,8 +90,8 @@ const projects: Project[] = [
     description: "Plataforma para que ciudadanos reporten incidencias y peligros urbanos en Tacna, con geolocalización y seguimiento de casos.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Mapbox"],
     icon: <Database className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "",
+    demoUrl: "https://apps.apple.com/us/app/alerta-tacna/id6747563849",
+    githubUrl: "https://github.com/Teamggez/moviles2Proyecto",
     image: "/alertatacna.jpeg",
     features: [
       "Reporte geolocalizado",
@@ -112,7 +112,7 @@ const projects: Project[] = [
     tech: ["React", "Firebase", "Tailwind CSS"],
     icon: <Globe className="w-6 h-6" />,
     demoUrl: "https://proyectorecursoshidricosu3.azurewebsites.net/",
-    githubUrl: "",
+    githubUrl: "https://github.com/orgs/SistemasUPT/teams/pyagua_castaneda_melendez_hurtado_lima",
     image: "/aguatopia.PNG",
     features: [
       "Juegos interactivos",
@@ -133,7 +133,7 @@ const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Supabase", "Audio API"],
     icon: <Globe className="w-6 h-6" />,
     demoUrl: "",
-    githubUrl: "",
+    githubUrl: "https://github.com/GabrielFMH/idiomifyUPT",
     image: "",
     features: [
       "Lecciones interactivas",
@@ -175,7 +175,7 @@ const projects: Project[] = [
     tech: ["Next.js", "Three.js", "TensorFlow.js", "Stripe"],
     icon: <ShoppingCart className="w-6 h-6" />,
     demoUrl: "",
-    githubUrl: "",
+    githubUrl: "https://github.com/GabrielFMH/VirtuLentes",
     image: "/placeholder.svg?height=200&width=400",
     features: [
       "Prueba virtual 3D",
@@ -188,6 +188,46 @@ const projects: Project[] = [
     team: "Equipo de 4",
     gradient: "from-purple-400 to-indigo-600",
     hoverGradient: "from-purple-500 to-indigo-700",
+  },
+  {
+    id: "laravel-inventory",
+    title: "Sistema web de inventario con login",
+    description: "",
+    tech: ["Laravel", "Vite"],
+    icon: <ShoppingCart className="w-6 h-6" />,
+    demoUrl: "https://laravel-app-448q.onrender.com/",
+    githubUrl: "https://github.com/GabrielFMH/InventarioLaravel.git",
+    image: "/placeholder.svg?height=200&width=400",
+    features: [
+      "Login",
+       
+      "Gestión de inventario"
+    ],
+    timeline: "6 meses",
+    team: "Equipo de 4",
+    gradient: "from-purple-400 to-indigo-600",
+    hoverGradient: "from-purple-500 to-indigo-700",
+  },
+  {
+    id: "notes-app",
+    title: "App de notas",
+    description: "Aplicación web para gestionar notas personales con sincronización en tiempo real y organización por categorías.",
+    tech: ["TypeScript", "SQLite", "FastAPI", "React"],
+    icon: <Code2 className="w-6 h-6" />,
+    demoUrl: "https://frontendmelendez-huarachi-62ed6-dep.vercel.app/",
+    githubUrl: "https://github.com/GabrielFMH/MelendezHuarachi-62ed6-deploy6.git",
+    image: "/notas.png",
+    features: [
+      "Crear y editar notas",
+      "Organización por categorías",
+      "Búsqueda avanzada",
+      "Sincronización en tiempo real",
+      "Exportación de notas"
+    ],
+    timeline: "2 meses",
+    team: "Proyecto individual",
+    gradient: "from-teal-400 to-emerald-600",
+    hoverGradient: "from-teal-500 to-emerald-700",
   },
 ]
 
@@ -225,7 +265,7 @@ export default function DeveloperProfile() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Gabriel Melendez Huarachi</h1>
-              <p className="text-xl text-gray-600 mb-3">Ingeniero de Sistemas | Movile developer and Machine Learning solutions</p>
+              <p className="text-xl text-gray-600 mb-3">Ingeniero de Sistemas | Movile developer and Machine Learning Engineer</p>
               <p className="text-gray-700 mb-4 max-w-2xl">
                 Soy una persona proactiva, organizada y responsable, con buenas relaciones interpersonales. Cuento con capacidades bilingües y gran interés por los avances tecnológicos. Busco aplicar mis habilidades en ingeniería de datos, computación en la nube y aprendizaje profundo para contribuir a una organización innovadora.
               </p>
@@ -281,10 +321,12 @@ export default function DeveloperProfile() {
 
       {/* Projects Section */}
       <Card>
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
         <CardHeader>
           <h2 >Featured Projects</h2>
           <p className="text-gray-600">Click on any project icon to explore the details</p>
         </CardHeader>
+      </div>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {projects.map((project) => (
@@ -309,6 +351,7 @@ export default function DeveloperProfile() {
             ))}
           </div>
         </CardContent>
+        
       </Card>
 
       {/* Project Modal */}
@@ -380,15 +423,24 @@ export default function DeveloperProfile() {
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-4">
                   {selectedProject.demoUrl && (
-                    <Button className="flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
+                    <Button asChild>
+                      <a
+                        href={selectedProject.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </a>
                     </Button>
                   )}
                   {selectedProject.githubUrl && (
-                    <Button variant="outline" className="flex items-center gap-2">
-                      <Github className="w-4 h-4" />
-                      View Code
+                    <Button variant="outline" asChild>
+                      <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Github className="w-4 h-4" />
+                        View Code
+                      </a>
                     </Button>
                   )}
                 </div>
