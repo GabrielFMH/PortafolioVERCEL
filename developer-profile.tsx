@@ -43,109 +43,44 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "oregano-disease-detector",
-    title: "Aplicación reconocedora de enfermedades en oréganos",
-    description: "App móvil basada en IA para identificar enfermedades en cultivos de orégano a partir de imágenes, ayudando a agricultores a tomar decisiones rápidas.",
-    tech: ["Flutter", "TensorFlow", "Firebase", "Python"],
-    icon: <Smartphone className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/orgs/epis-upt-flor/teams/oreganoai",
-    image: "/oreganoai.jpeg",
-    features: [
-      "Reconocimiento de imágenes",
-      "Diagnóstico automático",
-      "Historial de cultivos",
-      "Notificaciones de alerta",
-      "Soporte multilenguaje"
-    ],
-    timeline: "4 meses",
-    team: "Equipo de 3",
-    gradient: "from-green-400 to-green-700",
-    hoverGradient: "from-green-500 to-green-800",
-  },
-  {
-    id: "english-certification-simulator",
-    title: "App de simulacros de exámenes de certificación de inglés",
-    description: "Aplicación web y móvil para practicar exámenes de certificación de inglés (TOEFL, Cambridge) con resultados y retroalimentación instantánea.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
+    id: "notes-app",
+    title: "App de notas",
+    description: "Aplicación web para gestionar notas personales con sincronización en tiempo real y organización por categorías.",
+    tech: ["TypeScript", "SQLite", "FastAPI", "React"],
     icon: <Code2 className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/GabrielFMH/Simulapp",
-    image: "/simulapp.PNG",
+    demoUrl: "https://frontendmelendez-huarachi-62ed6-dep.vercel.app/",
+    githubUrl: "https://github.com/GabrielFMH/MelendezHuarachi-62ed6-deploy6.git",
+    image: "/notas.png",
     features: [
-      "Simulacros de exámenes",
-      "Corrección automática",
-      "Estadísticas de progreso",
-      "Banco de preguntas actualizado",
-      "Soporte multiplataforma"
-    ],
-    timeline: "3 meses",
-    team: "Equipo de 2",
-    gradient: "from-blue-400 to-indigo-600",
-    hoverGradient: "from-blue-500 to-indigo-700",
-  },
-  {
-    id: "tacna-incidents",
-    title: "Aplicación de reporte de incidencias y peligros en la ciudad de Tacna",
-    description: "Plataforma para que ciudadanos reporten incidencias y peligros urbanos en Tacna, con geolocalización y seguimiento de casos.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Mapbox"],
-    icon: <Database className="w-6 h-6" />,
-    demoUrl: "https://apps.apple.com/us/app/alerta-tacna/id6747563849",
-    githubUrl: "https://github.com/Teamggez/moviles2Proyecto",
-    image: "/alertatacna.jpeg",
-    features: [
-      "Reporte geolocalizado",
-      "Seguimiento de casos",
-      "Panel de administración",
-      "Notificaciones a usuarios",
-      "Mapa interactivo"
-    ],
-    timeline: "5 meses",
-    team: "Equipo de 4",
-    gradient: "from-orange-400 to-red-600",
-    hoverGradient: "from-orange-500 to-red-700",
-  },
-  {
-    id: "water-awareness",
-    title: "Sistema web de concientización del cuidado del agua",
-    description: "Sitio web educativo e interactivo para promover el uso responsable del agua mediante juegos, retos y recursos didácticos.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
-    icon: <Globe className="w-6 h-6" />,
-    demoUrl: "https://proyectorecursoshidricosu3.azurewebsites.net/",
-    githubUrl: "https://github.com/orgs/SistemasUPT/teams/pyagua_castaneda_melendez_hurtado_lima",
-    image: "/aguatopia.PNG",
-    features: [
-      "Juegos interactivos",
-      "Recursos educativos",
-      "Retos y logros",
-      "Foro de usuarios",
-      "Estadísticas de ahorro"
+      "Crear y editar notas",
+      "Organización por categorías",
+      "Búsqueda avanzada",
+      "Sincronización en tiempo real",
+      "Exportación de notas"
     ],
     timeline: "2 meses",
-    team: "Equipo de 2",
-    gradient: "from-cyan-400 to-blue-600",
-    hoverGradient: "from-cyan-500 to-blue-700",
+    team: "Proyecto individual",
+    gradient: "from-teal-400 to-emerald-600",
+    hoverGradient: "from-teal-500 to-emerald-700",
   },
   {
-    id: "native-languages",
-    title: "Web de aprendizaje de idiomas originarios",
-    description: "Plataforma web para aprender idiomas originarios peruanos con lecciones, ejercicios y audio de hablantes nativos.",
-    tech: ["Next.js", "TypeScript", "Supabase", "Audio API"],
-    icon: <Globe className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/GabrielFMH/idiomifyUPT",
-    image: "",
+    id: "laravel-inventory",
+    title: "Sistema web de inventario con login",
+    description: "",
+    tech: ["Laravel", "Vite"],
+    icon: <ShoppingCart className="w-6 h-6" />,
+    demoUrl: "https://laravel-app-448q.onrender.com/",
+    githubUrl: "https://github.com/GabrielFMH/InventarioLaravel.git",
+    image: "/placeholder.svg?height=200&width=400",
     features: [
-      "Lecciones interactivas",
-      "Ejercicios prácticos",
-      "Audio de hablantes nativos",
-      "Seguimiento de progreso",
-      "Foro de comunidad"
+      "Login",
+
+      "Gestión de inventario"
     ],
     timeline: "6 meses",
-    team: "Equipo de 3",
-    gradient: "from-yellow-400 to-orange-600",
-    hoverGradient: "from-yellow-500 to-orange-700",
+    team: "Equipo de 4",
+    gradient: "from-purple-400 to-indigo-600",
+    hoverGradient: "from-purple-500 to-indigo-700",
   },
   {
     id: "news-veracity",
@@ -169,6 +104,90 @@ const projects: Project[] = [
     hoverGradient: "from-pink-500 to-red-700",
   },
   {
+    id: "tacna-incidents",
+    title: "Aplicación de reporte de incidencias y peligros en la ciudad de Tacna",
+    description: "Plataforma para que ciudadanos reporten incidencias y peligros urbanos en Tacna, con geolocalización y seguimiento de casos.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Mapbox"],
+    icon: <Database className="w-6 h-6" />,
+    demoUrl: "https://apps.apple.com/us/app/alerta-tacna/id6747563849",
+    githubUrl: "https://github.com/Teamggez/moviles2Proyecto",
+    image: "/alertatacna.jpeg",
+    features: [
+      "Reporte geolocalizado",
+      "Seguimiento de casos",
+      "Panel de administración",
+      "Notificaciones a usuarios",
+      "Mapa interactivo"
+    ],
+    timeline: "5 meses",
+    team: "Equipo de 4",
+    gradient: "from-orange-400 to-red-600",
+    hoverGradient: "from-orange-500 to-red-700",
+  },
+  {
+    id: "native-languages",
+    title: "Web de aprendizaje de idiomas originarios",
+    description: "Plataforma web para aprender idiomas originarios peruanos con lecciones, ejercicios y audio de hablantes nativos.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Audio API"],
+    icon: <Globe className="w-6 h-6" />,
+    demoUrl: "",
+    githubUrl: "https://github.com/GabrielFMH/idiomifyUPT",
+    image: "",
+    features: [
+      "Lecciones interactivas",
+      "Ejercicios prácticos",
+      "Audio de hablantes nativos",
+      "Seguimiento de progreso",
+      "Foro de comunidad"
+    ],
+    timeline: "6 meses",
+    team: "Equipo de 3",
+    gradient: "from-yellow-400 to-orange-600",
+    hoverGradient: "from-yellow-500 to-orange-700",
+  },
+  {
+    id: "english-certification-simulator",
+    title: "App de simulacros de exámenes de certificación de inglés",
+    description: "Aplicación web y móvil para practicar exámenes de certificación de inglés (TOEFL, Cambridge) con resultados y retroalimentación instantánea.",
+    tech: ["React", "Node.js", "MongoDB", "Express"],
+    icon: <Code2 className="w-6 h-6" />,
+    demoUrl: "",
+    githubUrl: "https://github.com/GabrielFMH/Simulapp",
+    image: "/simulapp.PNG",
+    features: [
+      "Simulacros de exámenes",
+      "Corrección automática",
+      "Estadísticas de progreso",
+      "Banco de preguntas actualizado",
+      "Soporte multiplataforma"
+    ],
+    timeline: "3 meses",
+    team: "Equipo de 2",
+    gradient: "from-blue-400 to-indigo-600",
+    hoverGradient: "from-blue-500 to-indigo-700",
+  },
+  {
+    id: "oregano-disease-detector",
+    title: "Aplicación reconocedora de enfermedades en oréganos",
+    description: "App móvil basada en IA para identificar enfermedades en cultivos de orégano a partir de imágenes, ayudando a agricultores a tomar decisiones rápidas.",
+    tech: ["Flutter", "TensorFlow", "Firebase", "Python"],
+    icon: <Smartphone className="w-6 h-6" />,
+    demoUrl: "",
+    githubUrl: "https://github.com/orgs/epis-upt-flor/teams/oreganoai",
+    image: "/oreganoai.jpeg",
+    features: [
+      "Reconocimiento de imágenes",
+      "Diagnóstico automático",
+      "Historial de cultivos",
+      "Notificaciones de alerta",
+      "Soporte multilenguaje"
+    ],
+    timeline: "4 meses",
+    team: "Equipo de 3",
+    gradient: "from-green-400 to-green-700",
+    hoverGradient: "from-green-500 to-green-800",
+  },
+  {
     id: "3d-glasses-shop",
     title: "Sistema web para venta de lentes con tecnología 3D y reconocimiento facial",
     description: "E-commerce avanzado para venta de lentes, permite probar modelos en 3D y utiliza reconocimiento facial para recomendaciones.",
@@ -190,44 +209,25 @@ const projects: Project[] = [
     hoverGradient: "from-purple-500 to-indigo-700",
   },
   {
-    id: "laravel-inventory",
-    title: "Sistema web de inventario con login",
-    description: "",
-    tech: ["Laravel", "Vite"],
-    icon: <ShoppingCart className="w-6 h-6" />,
-    demoUrl: "https://laravel-app-448q.onrender.com/",
-    githubUrl: "https://github.com/GabrielFMH/InventarioLaravel.git",
-    image: "/placeholder.svg?height=200&width=400",
+    id: "water-awareness",
+    title: "Sistema web de concientización del cuidado del agua",
+    description: "Sitio web educativo e interactivo para promover el uso responsable del agua mediante juegos, retos y recursos didácticos.",
+    tech: ["React", "Firebase", "Tailwind CSS"],
+    icon: <Globe className="w-6 h-6" />,
+    demoUrl: "https://proyectorecursoshidricosu3.azurewebsites.net/",
+    githubUrl: "https://github.com/orgs/SistemasUPT/teams/pyagua_castaneda_melendez_hurtado_lima",
+    image: "/aguatopia.PNG",
     features: [
-      "Login",
-       
-      "Gestión de inventario"
-    ],
-    timeline: "6 meses",
-    team: "Equipo de 4",
-    gradient: "from-purple-400 to-indigo-600",
-    hoverGradient: "from-purple-500 to-indigo-700",
-  },
-  {
-    id: "notes-app",
-    title: "App de notas",
-    description: "Aplicación web para gestionar notas personales con sincronización en tiempo real y organización por categorías.",
-    tech: ["TypeScript", "SQLite", "FastAPI", "React"],
-    icon: <Code2 className="w-6 h-6" />,
-    demoUrl: "https://frontendmelendez-huarachi-62ed6-dep.vercel.app/",
-    githubUrl: "https://github.com/GabrielFMH/MelendezHuarachi-62ed6-deploy6.git",
-    image: "/notas.png",
-    features: [
-      "Crear y editar notas",
-      "Organización por categorías",
-      "Búsqueda avanzada",
-      "Sincronización en tiempo real",
-      "Exportación de notas"
+      "Juegos interactivos",
+      "Recursos educativos",
+      "Retos y logros",
+      "Foro de usuarios",
+      "Estadísticas de ahorro"
     ],
     timeline: "2 meses",
-    team: "Proyecto individual",
-    gradient: "from-teal-400 to-emerald-600",
-    hoverGradient: "from-teal-500 to-emerald-700",
+    team: "Equipo de 2",
+    gradient: "from-cyan-400 to-blue-600",
+    hoverGradient: "from-cyan-500 to-blue-700",
   },
 ]
 
@@ -236,16 +236,24 @@ export default function DeveloperProfile() {
   const { theme, setTheme } = useTheme()
 
   const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
+    "PHP",
     "Python",
-    "PostgreSQL",
-    "MongoDB",
-    "AWS",
+    "Dart",
+    "JavaScript",
+    "FastAPI",
+    "Laravel",
+    "Flask",
+    "Flutter",
+    "PyTorch",
+    "LangChain",
+    "SQL Server",
+    "NoSQL",
+    "Excel",
+    "Power BI",
+    "AWS Data Engineering",
+    "Datadog",
     "Docker",
+    "Git",
   ]
 
   return (
@@ -265,18 +273,30 @@ export default function DeveloperProfile() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Gabriel Melendez Huarachi</h1>
-              <p className="text-xl text-gray-600 mb-3">Ingeniero de Sistemas | Movile developer and Machine Learning Engineer</p>
+              <p className="text-xl text-gray-600 mb-3">Backend Developer | Data Analyst</p>
               <p className="text-gray-700 mb-4 max-w-2xl">
-                Soy una persona proactiva, organizada y responsable, con buenas relaciones interpersonales. Cuento con capacidades bilingües y gran interés por los avances tecnológicos. Busco aplicar mis habilidades en ingeniería de datos, computación en la nube y aprendizaje profundo para contribuir a una organización innovadora.
+                Systems Engineering graduate specializing in Backend Development (PHP, Python), Data Analysis, and Machine Learning. Proven experience in building high-performance APIs, designing data pipelines, and transforming complex information into strategic insights through predictive modeling and advanced data visualization.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-                <Badge variant="secondary">AWS Data Engineering</Badge>
-                <Badge variant="secondary">Power BI</Badge>
-                <Badge variant="secondary">Deep Learning (Nvidia)</Badge>
+                <Badge variant="secondary">PHP</Badge>
+                <Badge variant="secondary">Python</Badge>
+                <Badge variant="secondary">Dart</Badge>
+                <Badge variant="secondary">JavaScript</Badge>
+                <Badge variant="secondary">FastAPI</Badge>
+                <Badge variant="secondary">Laravel</Badge>
+                <Badge variant="secondary">Flask</Badge>
                 <Badge variant="secondary">Flutter</Badge>
-                <Badge variant="secondary">Liderazgo</Badge>
-                <Badge variant="secondary">Comunicación</Badge>
-                <Badge variant="secondary">Trabajo en equipo</Badge>
+                <Badge variant="secondary">PyTorch</Badge>
+                <Badge variant="secondary">LangChain</Badge>
+                <Badge variant="secondary">SQL Server</Badge>
+                <Badge variant="secondary">NoSQL</Badge>
+                <Badge variant="secondary">Excel</Badge>
+                <Badge variant="secondary">Power BI</Badge>
+                <Badge variant="secondary">AWS Data Engineering</Badge>
+                <Badge variant="secondary">Datadog</Badge>
+                <Badge variant="secondary">Docker</Badge>
+                <Badge variant="secondary">Git</Badge>
+                <Badge variant="secondary">English B2</Badge>
               </div>
               <div className="flex justify-center md:justify-start gap-3 mb-2">
                 <Button variant="outline" size="sm" asChild>
@@ -286,7 +306,13 @@ export default function DeveloperProfile() {
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <a href="mailto:gabrielfarimelendezhuarachi@gmail.com">
+                  <a href="https://linkedin.com/in/gabriel-melendez-huarachi-b87757212" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="mailto:gabmelendez@upt.pe">
                     <Mail className="w-4 h-4 mr-2" />
                     Email
                   </a>
@@ -294,7 +320,7 @@ export default function DeveloperProfile() {
                 <Button variant="outline" size="sm" asChild>
                   <a href="https://gabrielfmh.github.io/" target="_blank" rel="noopener noreferrer">
                     <Globe className="w-4 h-4 mr-2" />
-                    Portfolio
+                    GITHUB
                   </a>
                 </Button>
               </div>
