@@ -176,7 +176,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/orgs/epis-upt-flor/teams/oreganoai",
     image: "/oreganoai.jpeg",
     features: [
-      "Reconocimiento de imágenes",
+      "Reconocimiento de imágenes.",
       "Diagnóstico automático",
       "Historial de cultivos",
       "Notificaciones de alerta",
