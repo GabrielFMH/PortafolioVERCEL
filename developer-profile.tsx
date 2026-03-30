@@ -229,6 +229,48 @@ const projects: Project[] = [
     gradient: "from-cyan-400 to-blue-600",
     hoverGradient: "from-cyan-500 to-blue-700",
   },
+  {
+    id: "powerbi-renewable-energy",
+    title: "Dashboard Power BI - Distribución de Generación de Energía Renovable",
+    description: "Dashboard interactivo de Power BI para analisar la distribución y tendencias de la generación de energía renovable, con visualizaciones estratégicas y KPIs clave.",
+    tech: ["Power BI", "DAX", "Excel", "SQL"],
+    icon: <Database className="w-6 h-6" />,
+    demoUrl: "",
+    githubUrl: "",
+    image: "/powerBi.png",
+    features: [
+      "Análisis de generación por fuente",
+      "Dashboard interactivo",
+      "KPIs y métricas clave",
+      "Tendencias históricas",
+      "Visualizaciones estratégicas"
+    ],
+    timeline: "1 mes",
+    team: "Proyecto individual",
+    gradient: "from-green-400 to-teal-600",
+    hoverGradient: "from-green-500 to-teal-700",
+  },
+  {
+    id: "sales-forecast-dashboard",
+    title: "Dashboard de Forecast de Ventas - Streamlit",
+    description: "Dashboard interactivo desarrollado con Python y Streamlit para predecir y visualizarforecast de ventas usando modelos de machine learning.",
+    tech: ["Python", "Streamlit", "Scikit-learn", "Pandas"],
+    icon: <Globe className="w-6 h-6" />,
+    demoUrl: "https://dashboardapp-hmavv7wnjjvbihdhz5lvls.streamlit.app/",
+    githubUrl: "",
+    image: "/placeholder.svg?height=200&width=400",
+    features: [
+      "Pronósticos de ventas",
+      "Modelos predictivos",
+      "Visualización interactiva",
+      "Análisis de tendencias",
+      "Reportes automáticos"
+    ],
+    timeline: "1 mes",
+    team: "Proyecto individual",
+    gradient: "from-violet-400 to-purple-600",
+    hoverGradient: "from-violet-500 to-purple-700",
+  },
 ]
 
 export default function DeveloperProfile() {
@@ -474,11 +516,27 @@ export default function DeveloperProfile() {
 
               {/* Right Half: Project Image */}
               <div className="w-full h-full min-h-[300px] bg-gray-100 rounded-lg flex items-center justify-center"> {/* Added min-h for better visual */}
-                <img
-                  src={selectedProject.image || "/placeholder.svg"}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover rounded-lg"
-                />
+                {selectedProject.id === "powerbi-renewable-energy" ? (
+                  <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
+                    <img
+                      src={selectedProject.image || "/placeholder.svg"}
+                      alt={selectedProject.title}
+                      className="w-full h-auto object-contain rounded-lg mb-4"
+                    />
+                    <img
+                      src="/powerBi.png"
+                      alt="QR Code Dashboard"
+                      className="w-32 h-32 object-contain"
+                    />
+                    <span className="text-xs text-gray-600 mt-2">Escanea para ver el dashboard</span>
+                  </div>
+                ) : (
+                  <img
+                    src={selectedProject.image || "/placeholder.svg"}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                )}
               </div>
             </CardContent>
           </Card>
