@@ -237,7 +237,7 @@ const projects: Project[] = [
     icon: <Database className="w-6 h-6" />,
     demoUrl: "",
     githubUrl: "",
-    image: "/powerBi.png",
+    image: "/powerBI.png",
     features: [
       "Análisis de generación por fuente",
       "Dashboard interactivo",
