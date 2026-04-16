@@ -22,6 +22,7 @@ import {
   Star,
   Moon,
   Sun,
+  FileText,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 
@@ -249,6 +250,27 @@ const projects: Project[] = [
     team: "Proyecto individual",
     gradient: "from-green-400 to-teal-600",
     hoverGradient: "from-green-500 to-teal-700",
+  },
+  {
+    id: "pdf-rag",
+    title: "RAG de PDFs con IA",
+    description: "Aplicación de IA que permite subir documentos PDF y realizar preguntas sobre su contenido usando Retrieval-Augmented Generation.",
+    tech: ["Python", "Gradio", "LangChain", "ChromaDB", "Hugging Face"],
+    icon: <FileText className="w-6 h-6" />,
+    demoUrl: "https://huggingface.co/spaces/GabrielFMH/pdfRAG",
+    githubUrl: "https://github.com/GabrielFMH/RAG_app",
+    image: "/placeholder.svg?height=200&width=400",
+    features: [
+      "Subida de múltiples PDFs",
+      "Búsqueda semántica en documentos",
+      "Interfaz conversacional con Gradio",
+      "Base de datos vectorial con ChromaDB",
+      "Integración con modelos LLM de Hugging Face"
+    ],
+    timeline: "2 meses",
+    team: "Proyecto individual",
+    gradient: "from-amber-400 to-orange-600",
+    hoverGradient: "from-amber-500 to-orange-700",
   },
   {
     id: "sales-forecast-dashboard",
