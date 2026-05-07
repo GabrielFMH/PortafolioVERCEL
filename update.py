@@ -1,303 +1,13 @@
-"use client"
+import os
 
-import type React from "react"
+file_path = 'c:/Users/Gab0ncio/Documents/repos/PortafolioVERCEL/developer-profile.tsx'
+with open(file_path, 'r', encoding='utf-8') as f:
+    content = f.read()
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Globe,
-  Code2,
-  Database,
-  Smartphone,
-  ShoppingCart,
-  X,
-  ExternalLink,
-  Calendar,
-  Users,
-  Star,
-  Moon,
-  Sun,
-  FileText,
-  ChevronRight,
-} from "lucide-react"
-import { useTheme } from "next-themes"
+start_marker = 'export default function DeveloperProfile() {'
+idx = content.find(start_marker)
 
-interface Project {
-  id: string
-  title: string
-  description: string
-  tech: string[]
-  icon: React.ReactNode
-  demoUrl?: string
-  githubUrl?: string
-  image: string
-  features: string[]
-  timeline: string
-  team: string
-  gradient: string
-  hoverGradient: string
-}
-
-const projects: Project[] = [
-  {
-    id: "notes-app",
-    title: "App de notas",
-    description: "Aplicación web para gestionar notas personales con sincronización en tiempo real y organización por categorías.",
-    tech: ["TypeScript", "SQLite", "FastAPI", "React"],
-    icon: <Code2 className="w-6 h-6" />,
-    demoUrl: "https://frontendmelendez-huarachi-62ed6-dep.vercel.app/",
-    githubUrl: "https://github.com/GabrielFMH/MelendezHuarachi-62ed6-deploy6.git",
-    image: "/notas.png",
-    features: [
-      "Crear y editar notas",
-      "Organización por categorías",
-      "Búsqueda avanzada",
-      "Sincronización en tiempo real",
-      "Exportación de notas"
-    ],
-    timeline: "2 meses",
-    team: "Proyecto individual",
-    gradient: "from-teal-400 to-emerald-600",
-    hoverGradient: "from-teal-500 to-emerald-700",
-  },
-  {
-    id: "laravel-inventory",
-    title: "Sistema web de inventario con login",
-    description: "",
-    tech: ["Laravel", "Vite"],
-    icon: <ShoppingCart className="w-6 h-6" />,
-    demoUrl: "https://laravel-app-448q.onrender.com/",
-    githubUrl: "https://github.com/GabrielFMH/InventarioLaravel.git",
-    image: "/placeholder.svg?height=200&width=400",
-    features: [
-      "Login",
-
-      "Gestión de inventario"
-    ],
-    timeline: "6 meses",
-    team: "Equipo de 4",
-    gradient: "from-purple-400 to-indigo-600",
-    hoverGradient: "from-purple-500 to-indigo-700",
-  },
-  {
-    id: "news-veracity",
-    title: "Web detectora de veracidad de noticias o hechos",
-    description: "Herramienta web que analiza noticias y hechos para detectar su veracidad usando IA y fuentes confiables.",
-    tech: ["React", "Python", "FastAPI", "NLP", "MongoDB"],
-    icon: <Database className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
-    features: [
-      "Análisis de texto con IA",
-      "Consulta de fuentes confiables",
-      "Historial de búsquedas",
-      "Interfaz intuitiva",
-      "Alertas de fake news"
-    ],
-    timeline: "4 meses",
-    team: "Equipo de 3",
-    gradient: "from-pink-400 to-red-600",
-    hoverGradient: "from-pink-500 to-red-700",
-  },
-  {
-    id: "tacna-incidents",
-    title: "Aplicación de reporte de incidencias y peligros en la ciudad de Tacna",
-    description: "Plataforma para que ciudadanos reporten incidencias y peligros urbanos en Tacna, con geolocalización y seguimiento de casos.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Mapbox"],
-    icon: <Database className="w-6 h-6" />,
-    demoUrl: "https://apps.apple.com/us/app/alerta-tacna/id6747563849",
-    githubUrl: "https://github.com/Teamggez/moviles2Proyecto",
-    image: "/alertatacna.jpeg",
-    features: [
-      "Reporte geolocalizado",
-      "Seguimiento de casos",
-      "Panel de administración",
-      "Notificaciones a usuarios",
-      "Mapa interactivo"
-    ],
-    timeline: "5 meses",
-    team: "Equipo de 4",
-    gradient: "from-orange-400 to-red-600",
-    hoverGradient: "from-orange-500 to-red-700",
-  },
-  {
-    id: "native-languages",
-    title: "Web de aprendizaje de idiomas originarios",
-    description: "Plataforma web para aprender idiomas originarios peruanos con lecciones, ejercicios y audio de hablantes nativos.",
-    tech: ["Next.js", "TypeScript", "Supabase", "Audio API"],
-    icon: <Globe className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/GabrielFMH/idiomifyUPT",
-    image: "",
-    features: [
-      "Lecciones interactivas",
-      "Ejercicios prácticos",
-      "Audio de hablantes nativos",
-      "Seguimiento de progreso",
-      "Foro de comunidad"
-    ],
-    timeline: "6 meses",
-    team: "Equipo de 3",
-    gradient: "from-yellow-400 to-orange-600",
-    hoverGradient: "from-yellow-500 to-orange-700",
-  },
-  {
-    id: "english-certification-simulator",
-    title: "App de simulacros de exámenes de certificación de inglés",
-    description: "Aplicación web y móvil para practicar exámenes de certificación de inglés (TOEFL, Cambridge) con resultados y retroalimentación instantánea.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    icon: <Code2 className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/GabrielFMH/Simulapp",
-    image: "/simulapp.PNG",
-    features: [
-      "Simulacros de exámenes",
-      "Corrección automática",
-      "Estadísticas de progreso",
-      "Banco de preguntas actualizado",
-      "Soporte multiplataforma"
-    ],
-    timeline: "3 meses",
-    team: "Equipo de 2",
-    gradient: "from-blue-400 to-indigo-600",
-    hoverGradient: "from-blue-500 to-indigo-700",
-  },
-  {
-    id: "oregano-disease-detector",
-    title: "Aplicación reconocedora de enfermedades en oréganos",
-    description: "App móvil basada en IA para identificar enfermedades en cultivos de orégano a partir de imágenes, ayudando a agricultores a tomar decisiones rápidas.",
-    tech: ["Flutter", "TensorFlow", "Firebase", "Python"],
-    icon: <Smartphone className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/orgs/epis-upt-flor/teams/oreganoai",
-    image: "/oreganoai.jpeg",
-    features: [
-      "Reconocimiento de imágenes.",
-      "Diagnóstico automático",
-      "Historial de cultivos",
-      "Notificaciones de alerta",
-      "Soporte multilenguaje"
-    ],
-    timeline: "4 meses",
-    team: "Equipo de 3",
-    gradient: "from-green-400 to-green-700",
-    hoverGradient: "from-green-500 to-green-800",
-  },
-  {
-    id: "3d-glasses-shop",
-    title: "Sistema web para venta de lentes con tecnología 3D y reconocimiento facial",
-    description: "E-commerce avanzado para venta de lentes, permite probar modelos en 3D y utiliza reconocimiento facial para recomendaciones.",
-    tech: ["Next.js", "Three.js", "TensorFlow.js", "Stripe"],
-    icon: <ShoppingCart className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "https://github.com/GabrielFMH/VirtuLentes",
-    image: "/placeholder.svg?height=200&width=400",
-    features: [
-      "Prueba virtual 3D",
-      "Reconocimiento facial",
-      "Recomendaciones personalizadas",
-      "Pasarela de pagos",
-      "Gestión de inventario"
-    ],
-    timeline: "6 meses",
-    team: "Equipo de 4",
-    gradient: "from-purple-400 to-indigo-600",
-    hoverGradient: "from-purple-500 to-indigo-700",
-  },
-  {
-    id: "water-awareness",
-    title: "Sistema web de concientización del cuidado del agua",
-    description: "Sitio web educativo e interactivo para promover el uso responsable del agua mediante juegos, retos y recursos didácticos.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
-    icon: <Globe className="w-6 h-6" />,
-    demoUrl: "https://proyectorecursoshidricosu3.azurewebsites.net/",
-    githubUrl: "https://github.com/orgs/SistemasUPT/teams/pyagua_castaneda_melendez_hurtado_lima",
-    image: "/aguatopia.PNG",
-    features: [
-      "Juegos interactivos",
-      "Recursos educativos",
-      "Retos y logros",
-      "Foro de usuarios",
-      "Estadísticas de ahorro"
-    ],
-    timeline: "2 meses",
-    team: "Equipo de 2",
-    gradient: "from-cyan-400 to-blue-600",
-    hoverGradient: "from-cyan-500 to-blue-700",
-  },
-  {
-    id: "powerbi-renewable-energy",
-    title: "Dashboard Power BI - Distribución de Generación de Energía Renovable",
-    description: "Dashboard interactivo de Power BI para analisar la distribución y tendencias de la generación de energía renovable, con visualizaciones estratégicas y KPIs clave.",
-    tech: ["Power BI", "DAX", "Excel", "SQL"],
-    icon: <Database className="w-6 h-6" />,
-    demoUrl: "",
-    githubUrl: "",
-    image: "/powerBI.png",
-    features: [
-      "Análisis de generación por fuente",
-      "Dashboard interactivo",
-      "KPIs y métricas clave",
-      "Tendencias históricas",
-      "Visualizaciones estratégicas"
-    ],
-    timeline: "1 mes",
-    team: "Proyecto individual",
-    gradient: "from-green-400 to-teal-600",
-    hoverGradient: "from-green-500 to-teal-700",
-  },
-  {
-    id: "pdf-rag",
-    title: "RAG de PDFs con IA",
-    description: "Aplicación de IA que permite subir documentos PDF y realizar preguntas sobre su contenido usando Retrieval-Augmented Generation.",
-    tech: ["Python", "Gradio", "LangChain", "ChromaDB", "Hugging Face"],
-    icon: <FileText className="w-6 h-6" />,
-    demoUrl: "https://huggingface.co/spaces/GabrielFMH/pdfRAG",
-    githubUrl: "https://github.com/GabrielFMH/RAG_app",
-    image: "/placeholder.svg?height=200&width=400",
-    features: [
-      "Subida de múltiples PDFs",
-      "Búsqueda semántica en documentos",
-      "Interfaz conversacional con Gradio",
-      "Base de datos vectorial con ChromaDB",
-      "Integración con modelos LLM de Hugging Face"
-    ],
-    timeline: "2 meses",
-    team: "Proyecto individual",
-    gradient: "from-amber-400 to-orange-600",
-    hoverGradient: "from-amber-500 to-orange-700",
-  },
-  {
-    id: "sales-forecast-dashboard",
-    title: "Dashboard de Forecast de Ventas - Streamlit",
-    description: "Dashboard interactivo desarrollado con Python y Streamlit para predecir y visualizarforecast de ventas usando modelos de machine learning.",
-    tech: ["Python", "Streamlit", "Scikit-learn", "Pandas"],
-    icon: <Globe className="w-6 h-6" />,
-    demoUrl: "https://dashboardapp-hmavv7wnjjvbihdhz5lvls.streamlit.app/",
-    githubUrl: "",
-    image: "/placeholder.svg?height=200&width=400",
-    features: [
-      "Pronósticos de ventas",
-      "Modelos predictivos",
-      "Visualización interactiva",
-      "Análisis de tendencias",
-      "Reportes automáticos"
-    ],
-    timeline: "1 mes",
-    team: "Proyecto individual",
-    gradient: "from-violet-400 to-purple-600",
-    hoverGradient: "from-violet-500 to-purple-700",
-  },
-]
-
-export default function DeveloperProfile() {
+new_component = """export default function DeveloperProfile() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -308,24 +18,9 @@ export default function DeveloperProfile() {
   }, [])
 
   const skills = [
-    "PHP",
-    "Python",
-    "Dart",
-    "JavaScript",
-    "FastAPI",
-    "Laravel",
-    "Flask",
-    "Flutter",
-    "PyTorch",
-    "LangChain",
-    "SQL Server",
-    "NoSQL",
-    "Excel",
-    "Power BI",
-    "AWS Data Engineering",
-    "Datadog",
-    "Docker",
-    "Git",
+    "PHP", "Python", "Dart", "JavaScript", "FastAPI", "Laravel", "Flask", "Flutter",
+    "PyTorch", "LangChain", "SQL Server", "NoSQL", "Excel", "Power BI",
+    "AWS Data Engineering", "Datadog", "Docker", "Git",
   ]
 
   const containerVariants = {
@@ -357,10 +52,10 @@ export default function DeveloperProfile() {
       >
         <Card className="relative overflow-hidden shadow-2xl border-0 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-xl rounded-[2rem]">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-indigo-50/40 to-purple-100/40 dark:from-blue-900/20 dark:via-indigo-900/10 dark:to-purple-900/20 pointer-events-none" />
-
+          
           <CardHeader className="relative p-8 md:p-14">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
-              <motion.div
+              <motion.div 
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 p-1.5 shrink-0 shadow-2xl"
               >
@@ -372,10 +67,10 @@ export default function DeveloperProfile() {
                   />
                 </div>
               </motion.div>
-
+              
               <div className="flex-1 text-center md:text-left space-y-6">
                 <div className="space-y-2">
-                  <motion.h1
+                  <motion.h1 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
@@ -383,7 +78,7 @@ export default function DeveloperProfile() {
                   >
                     Gabriel Melendez Huarachi
                   </motion.h1>
-                  <motion.p
+                  <motion.p 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
@@ -393,16 +88,16 @@ export default function DeveloperProfile() {
                   </motion.p>
                 </div>
 
-                <motion.p
+                <motion.p 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                   className="text-zinc-600 dark:text-zinc-400 max-w-3xl text-lg leading-relaxed"
                 >
-                  Systems Engineering graduate specializing in Backend Development (PHP, Python), Data Analysis, and Machine Learning. Proven experience in building high-performance APIs, designing data pipelines, and transforming complex information into strategic insights through predictive modeling and advanced data visualization.
+                  Systems Engineering graduate specializing in Backend Development (PHP, Python), Data Analysis, and Machine Learning. Proven experience in building high-performance APIs, designing data pipelines, and transforming complex information into strategic insights.
                 </motion.p>
 
-                <motion.div
+                <motion.div 
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
@@ -420,32 +115,32 @@ export default function DeveloperProfile() {
                   </motion.div>
                 </motion.div>
 
-                <motion.div
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                   className="flex flex-wrap justify-center md:justify-start gap-4 pt-4"
                 >
-                  <Button variant="default" className="rounded-full shadow-lg hover:shadow-xl transition-all font-semibold" size="lg" asChild>
+                  <Button variant="default" className="rounded-full shadow-lg hover:shadow-xl transition-all" size="lg" asChild>
                     <a href="https://github.com/gabrielfmh" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-5 h-5 mr-2" /> GitHub
+                      <Github className="w-4 h-4 mr-2" /> GitHub
                     </a>
                   </Button>
-                  <Button variant="outline" className="rounded-full shadow-sm hover:shadow-md transition-all font-semibold" size="lg" asChild>
+                  <Button variant="outline" className="rounded-full shadow-sm hover:shadow-md transition-all" size="lg" asChild>
                     <a href="https://linkedin.com/in/gabriel-melendez-huarachi-b87757212" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="w-5 h-5 mr-2" /> LinkedIn
+                      <Linkedin className="w-4 h-4 mr-2" /> LinkedIn
                     </a>
                   </Button>
-                  <Button variant="outline" className="rounded-full shadow-sm hover:shadow-md transition-all font-semibold" size="lg" asChild>
+                  <Button variant="outline" className="rounded-full shadow-sm hover:shadow-md transition-all" size="lg" asChild>
                     <a href="mailto:gabmelendez@upt.pe">
-                      <Mail className="w-5 h-5 mr-2" /> Email
+                      <Mail className="w-4 h-4 mr-2" /> Email
                     </a>
                   </Button>
-
+                  
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                     className="rounded-full ml-auto md:ml-0 shadow-sm bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 w-11 h-11"
                   >
                     {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -469,7 +164,7 @@ export default function DeveloperProfile() {
           <p className="text-zinc-500 dark:text-zinc-400 text-lg">Explore my recent work and technical achievements</p>
         </div>
 
-        <motion.div
+        <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -505,7 +200,7 @@ export default function DeveloperProfile() {
       {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -521,7 +216,7 @@ export default function DeveloperProfile() {
               className="w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col bg-white dark:bg-zinc-950 rounded-[2rem] shadow-2xl border border-zinc-200/20 dark:border-zinc-800/50"
             >
               <div className={`h-3 w-full bg-gradient-to-r ${selectedProject.gradient}`} />
-
+              
               <div className="flex-1 overflow-y-auto p-6 md:p-10">
                 <div className="flex items-start justify-between mb-8">
                   <div className="flex items-center gap-5">
@@ -556,11 +251,11 @@ export default function DeveloperProfile() {
                       </h4>
                       <ul className="space-y-4">
                         {selectedProject.features.map((feature, index) => (
-                          <motion.li
+                          <motion.li 
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.1 * index }}
-                            key={index}
+                            key={index} 
                             className="flex items-center gap-4 text-zinc-700 dark:text-zinc-300"
                           >
                             <div className={`w-2.5 h-2.5 rounded-full shadow-sm bg-gradient-to-r ${selectedProject.gradient}`} />
@@ -635,3 +330,7 @@ export default function DeveloperProfile() {
     </div>
   )
 }
+"""
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(content[:idx] + new_component)
